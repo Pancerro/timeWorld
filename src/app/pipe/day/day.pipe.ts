@@ -1,0 +1,14 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { WorldTime } from 'src/app/class/world-time';
+
+@Pipe({
+  name: 'day'
+})
+export class DayPipe implements PipeTransform {
+
+  transform(time:WorldTime): any {
+
+       return  time.datetime.split(".")[0].split("T")[0].toString();
+  }
+
+}
