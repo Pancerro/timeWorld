@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { WorldTime } from 'src/app/class/world-time';
-
+import {CommonModule} from "@angular/common";
 @Pipe({
   name: 'day'
 })

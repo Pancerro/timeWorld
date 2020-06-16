@@ -4,6 +4,10 @@ button {
     margin-right: 10px;
 }
 
+.border {
+    padding: 3%;
+}
+
 footer {
     padding-top: 10px;
     position: fixed;

@@ -8,9 +8,7 @@ import { WorldTime } from '../class/world-time';
 })
 export class WorldtimeService {
 
-  constructor(private http:HttpClient) {
-
-   }
+  constructor(private http:HttpClient) {}
   public time(url:string):Observable<WorldTime>{
     return this.http.get<WorldTime>("http://worldtimeapi.org/api/timezone/"+url);
   }
