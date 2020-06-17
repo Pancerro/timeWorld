@@ -12,7 +12,7 @@ describe('MainPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MainPageComponent,HoursPipe,DayPipe],
+      declarations: [MainPageComponent, HoursPipe, DayPipe],
       providers: [
         {
           provide: WorldtimeService, useValue: {}
@@ -31,20 +31,23 @@ describe('MainPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('should return timezone Europe/Warsaw', () => {
     expect(component.localization).toBeTruthy();
     expect(component.localization[0]).toEqual({ timezone: 'Europe/Warsaw' })
   });
+
   it('should return myTimezone - Europe/Warsaw', () => {
     expect(component.myTimezone).toBeTruthy();
-    expect(component.myTimezone).toEqual( Intl.DateTimeFormat().resolvedOptions().timeZone)
+    expect(component.myTimezone).toEqual(Intl.DateTimeFormat().resolvedOptions().timeZone)
   });
-  it('should by a click button', fakeAsync( () => {
+
+  it('should by a click button', fakeAsync(() => {
     spyOn(component, 'getTime');
-    fixture.detectChanges(); 
+    fixture.detectChanges();
     let btn = fixture.debugElement.query(By.css('button'));
     btn.triggerEventHandler('click', null);
     tick();
     expect(component.getTime).toHaveBeenCalled();
-}));
+  }));
 });

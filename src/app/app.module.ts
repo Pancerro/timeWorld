@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './dashboards/main-page/main-page.component';
 import { HoursPipe } from './pipe/hours/hours.pipe';
 import { DayPipe } from './pipe/day/day.pipe';
-import {CommonModule} from "@angular/common";
 
 
 @NgModule({

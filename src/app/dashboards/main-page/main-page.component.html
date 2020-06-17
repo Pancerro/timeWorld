@@ -19,7 +19,7 @@
                             </div>
                         </h3>
                     </div>
-                    <div class="card bg-danger">
+                    <div id="hours" class="card bg-success" (mouseover)="changeBackgroundBadgeHours(true)" (mouseout)="changeBackgroundBadgeHours(false)">
                         <h3 class="card-title text-center">
                             <div class="d-flex flex-wrap justify-content-center mt-3">
                                 <a><span class="badge ">Godzina:</span></a>
@@ -42,6 +42,7 @@
                 <button type="button" class="btn btn-dark btn-sm" (click)="getTime(local?.timezone)">{{local?.timezone}} </button>
             </div>
         </div>
+
     </section>
     <footer class="page-footer font-small bg-dark fixed-bottom ">
         <div class="footer-copyright text-center py-3">

@@ -14,6 +14,7 @@ describe('WorldTimeService', () => {
   it('should be initialized', inject([WorldtimeService], (timeService: WorldtimeService) => {
     expect(timeService).toBeTruthy();
   }));
+
   it(
     'should service return a get method',
     fakeAsync(
