@@ -1,47 +1,53 @@
 <div class="container text-white">
-    <div class="jumbotron bg-dark ">
-        <h1>Czas na &#347;wiecie</h1>
-        <p><ins>Po kliknieciu na przycisk, zegar zmieni sie na aktualny czas z danego miejsca.</ins></p>
-        <p>Twoja strefa czasowa: {{myTimezone}}</p>
-    </div>
-    <div class="border border-info bg-info rounded">
-        <div class="row justify-content-center ">
-            <div class="col-md-4">
-                <div class="card bg-dark">
-                    <h3 class="card-title text-center">
-                        <div class="d-flex flex-wrap justify-content-center mt-3">
-                            <a><span class="badge ">Data:</span></a>
-                            <a><span class="badge ">{{clockTime|day}}</span></a>
-                        </div>
-                    </h3>
-                </div>
-                <div class="card bg-danger">
-                    <h3 class="card-title text-center">
-                        <div class="d-flex flex-wrap justify-content-center mt-3">
-                            <a><span class="badge ">Godzina:</span></a>
-                            <a><span class="badge ">{{clockTime|hours}}</span></a>
-                        </div>
-                    </h3>
-                </div>
-                <div class="card bg-dark">
-                    <h3 class="card-title text-center">
-                        <div class="d-flex flex-wrap justify-content-center mt-3">
-                            <a><span class="badge ">Strefa czasowa:</span></a>
-                            <a><span class="badge ">{{clockTime?.abbreviation}}</span></a>
-                        </div>
-                    </h3>
+    <header>
+        <div class="jumbotron bg-dark ">
+            <h1>Czas na &#347;wiecie</h1>
+            <p><ins>Po kliknieciu na przycisk, zegar zmieni sie na aktualny czas z danego miejsca.</ins></p>
+            <p>Twoja strefa czasowa: {{myTimezone}}</p>
+        </div>
+    </header>
+    <section>
+        <div class="border border-info bg-info rounded">
+            <h6 class="text-center text-black-50" *ngIf="choiceTimezone">Wybrana strefa czasowa: {{choiceTimezone}}</h6>
+            <div class="row justify-content-center ">
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <h3 class="card-title text-center">
+                            <div class="d-flex flex-wrap justify-content-center mt-3">
+                                <a><span class="badge ">Data:</span></a>
+                                <a><span class="badge ">{{clockTime|day}}</span></a>
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="card bg-danger">
+                        <h3 class="card-title text-center">
+                            <div class="d-flex flex-wrap justify-content-center mt-3">
+                                <a><span class="badge ">Godzina:</span></a>
+                                <a><span class="badge ">{{clockTime|hours}}</span></a>
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="card bg-dark">
+                        <h3 class="card-title text-center">
+                            <div class="d-flex flex-wrap justify-content-center mt-3">
+                                <a><span class="badge ">Strefa czasowa:</span></a>
+                                <a><span class="badge ">{{clockTime?.abbreviation}}</span></a>
+                            </div>
+                        </h3>
+                    </div>
                 </div>
             </div>
+            <br>
+            <div *ngFor="let local of localization" class="text-center">
+                <button type="button" class="btn btn-dark btn-sm" (click)="getTime(local?.timezone)">{{local?.timezone}} </button>
+            </div>
         </div>
-        <br>
-        <div *ngFor="let local of localization" class="text-center">
-            <button type="button" class="btn btn-dark" (click)="getTime(local?.timezone)">{{local?.timezone}} </button>
+    </section>
+    <footer class="page-footer font-small bg-dark fixed-bottom ">
+        <div class="footer-copyright text-center py-3">
+            <strong> &#169; Adrian Ławecki </strong>
+            <a href="https://github.com/Pancerro?tab=repositories"><img width="35px" height="35px" class="img-fluid" alt="github logo" src="assets/github-icon.png"></a>
+            <a href="mailto:pancerro@gmail.com"><img width="35px" height="35px" class="img-fluid" alt="email icon" src="assets/email-icon.png"></a>
         </div>
-    </div>
-    <footer class="bg-dark">
-        <p class="lead"><strong>&#169; Adrian Ławecki
-        <a href="https://github.com/Pancerro?tab=repositories"><img width="35px" height="35px" class="img-fluid" alt="github logo" src="assets/github-icon.png"></a>
-   </strong></p>
-        <p> <a href="mailto:pancerro@gmail.com">Email: pancerro@gmail.com</a></p>
     </footer>
 </div>

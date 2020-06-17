@@ -26,7 +26,6 @@ describe('MainPageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MainPageComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -41,12 +40,11 @@ describe('MainPageComponent', () => {
     expect(component.myTimezone).toEqual( Intl.DateTimeFormat().resolvedOptions().timeZone)
   });
   it('should by a click button', fakeAsync( () => {
-    fixture.detectChanges();
     spyOn(component, 'getTime');
+    fixture.detectChanges(); 
     let btn = fixture.debugElement.query(By.css('button'));
     btn.triggerEventHandler('click', null);
     tick();
-    fixture.detectChanges();
     expect(component.getTime).toHaveBeenCalled();
 }));
 });

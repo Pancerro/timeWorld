@@ -1,20 +1,11 @@
 button {
     width: 200px;
     margin-bottom: 2px;
-    margin-right: 10px;
 }
 
 .border {
-    padding: 3%;
-}
-
-footer {
-    padding-top: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    margin-top: -25px;
+    padding: 1%;
 }
 
 img {
